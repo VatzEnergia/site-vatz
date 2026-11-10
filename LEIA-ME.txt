@@ -1,0 +1,70 @@
+SITE VATZ ENERGIA — COMO PUBLICAR E ATUALIZAR
+==============================================
+
+1) PUBLICAR
+   Envie a pasta inteira "site para hospedagem" para a hospedagem
+   (Hostinger, Netlify, Vercel, cPanel...). O index.html é a página principal.
+   Mantenha as pastas assets/ e fotos/ junto com o index.html.
+
+   Quando tiver o domínio, avise para preencher SITE_URL (deixa a imagem de
+   compartilhamento no WhatsApp/Facebook com o endereço completo).
+
+2) CONFIGURAÇÕES NO index.html
+   Procure o bloco "CONFIGURAÇÃO" no fim do arquivo (dentro de <script>):
+
+   PLANILHA_CSV_URL     link CSV da aba SITE (preços e chaves)
+   OBRAS_CSV_URL        link CSV da aba OBRAS
+   DEPOIMENTOS_CSV_URL  link CSV da aba DEPOIMENTOS
+   GA4_ID               ID do Google Analytics 4 (G-XXXXXXXXXX)
+   META_PIXEL_ID        ID do Pixel da Meta
+
+   Para gerar o link CSV: no Google Planilhas, Arquivo > Compartilhar >
+   Publicar na Web > escolha a aba > formato CSV > Publicar > copie o link.
+
+   Analytics e Pixel só carregam depois que o visitante aceita o aviso de cookies.
+
+3) ABA "SITE" (já existente) — chaves novas que podem ser usadas
+   chave               valor (exemplo)
+   fator_economia      85
+   crea                1234567/D
+   endereco            Rua X, 123 · Centro · Ceres/GO
+   google_avaliacoes   https://g.page/r/.../review
+   telefone_exibicao   (62) 99434-0061
+   campanha_ativa      NAO      (desliga a Black Friday)
+   potencia_modulo_w   620
+
+   CREA, endereço e o link do Google só aparecem no site quando preenchidos.
+
+4) ABA "OBRAS" — uma linha por foto (a primeira linha é o cabeçalho)
+   foto_url | tipo | modulos | potencia_modulo_w | cidade | repetida | ativo
+
+   foto_url           link direto da imagem (ex.: fotos/obras/obra-09.webp
+                      enviada para a hospedagem, ou link público da imagem)
+   tipo               ex.: Residencial · telhado cerâmico
+   modulos            ex.: 12   (a potência em kWp é calculada sozinha)
+   potencia_modulo_w  vazio = 620 W
+   cidade             opcional, ex.: Ceres/GO
+   repetida           SIM quando for outra foto da mesma obra (não soma no total)
+   ativo              NAO esconde a foto sem apagar
+
+   Com a aba preenchida, ela substitui a galeria que está no site hoje.
+   Copie também as 8 obras atuais para a planilha (fotos/obras/obra-01.webp
+   até obra-08.webp, nesta ordem: rural 52 / casa 9 / fibrocimento 18 /
+   sobrado 16 / casa 8 / pergolado 12 / colonial 8 / rural 52 repetida).
+
+5) ABA "DEPOIMENTOS" — uma linha por cliente
+   nome | texto | foto_url | destaque | origem | nota | ativo
+
+   texto      o depoimento (quebre parágrafos com Enter dentro da célula)
+   foto_url   opcional; sem foto aparecem as iniciais
+   destaque   ex.: Payback atingido
+   origem     vazio = Via WhatsApp
+   nota       vazio = 5 estrelas
+
+   Fotos atuais: fotos/clientes/jamil-soares.jpg, elias-nepomuceno.jpg,
+   suesley-alves.jpg, jorge-luiz-moraes.jpg (Fábio sem foto).
+
+6) DE ONDE VEIO O CONTATO
+   Toda mensagem de WhatsApp aberta pelo site começa com uma etiqueta,
+   por exemplo: [Site · Simulador], [Site · Planos], [Site · Wallbox],
+   [Site · Assistência técnica], [Site · Eletroposto], [Site · Botão flutuante].
